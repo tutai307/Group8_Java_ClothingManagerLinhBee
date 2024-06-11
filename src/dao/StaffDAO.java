@@ -27,22 +27,22 @@ public class StaffDAO {
         Path path = Paths.get(filePath);
         if (Files.exists(path) && Files.size(path) > 0) {
             try (Reader reader = new FileReader(filePath)) {
-                JSONArray teacherArray = (JSONArray) new org.json.simple.parser.JSONParser().parse(reader);
-                for (Object teacherObject : teacherArray) {
-                    JSONObject teacherJson = (JSONObject) teacherObject;
-                    int id = Integer.parseInt(teacherJson.get("id").toString());
-                    String imagePath = (String)teacherJson.get("imagePath");
-                    String code = (String) teacherJson.get("code");
-                    String firstname = (String) teacherJson.get("firstname");
-                    String lastname = (String) teacherJson.get("lastname");
-                    String email = (String) teacherJson.get("email");
-                    String address = (String) teacherJson.get("address");
-                    String phone = (String) teacherJson.get("phoneNumber");
-                    String birthDate = (String) teacherJson.get("birthDate");
-                    int accountId = Integer.parseInt(teacherJson.get("accountId").toString());
-                    String position = (String) teacherJson.get("position").toString();
-                    Staff tea = new Staff(id,imagePath, code, firstname, lastname, address, phone, email, birthDate, accountId,position);
-                    JSONArray toursArray = (JSONArray) teacherJson.get("tours");
+                JSONArray staffArray = (JSONArray) new org.json.simple.parser.JSONParser().parse(reader);
+                for (Object staffObject : staffArray) {
+                    JSONObject staffJson = (JSONObject) staffObject;
+                    int id = Integer.parseInt(staffJson.get("id").toString());
+                    String imagePath = (String)staffJson.get("imagePath");
+                    String code = (String) staffJson.get("code");
+                    String firstname = (String) staffJson.get("firstname");
+                    String lastname = (String) staffJson.get("lastname");
+                    String email = (String) staffJson.get("email");
+                    String address = (String) staffJson.get("address");
+                    String phone = (String) staffJson.get("phoneNumber");
+                    String birthDate = (String) staffJson.get("birthDate");
+                    int accountId = Integer.parseInt(staffJson.get("accountId").toString());
+                    String position = (String) staffJson.get("position").toString();
+                    Staff staff = new Staff(id,imagePath, code, firstname, lastname, address, phone, email, birthDate, accountId,position);
+//                    JSONArray toursArray = (JSONArray) staffJson.get("tours");
 //                    if (toursArray != null) {
 //                        List<Tour> tours = new ArrayList<>();
 //                        for (Object tourObject : toursArray) {
@@ -62,13 +62,12 @@ public class StaffDAO {
 //                        tea.setTours(tours);
 //                    }
 
-                    data.add(tea);
+                    data.add(staff);
                 }
             } catch (Exception e) {
                 throw new IOException("Error reading Company data from file", e);
             }
         }
-
         return data;
     }
 
