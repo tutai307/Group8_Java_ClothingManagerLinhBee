@@ -17,7 +17,7 @@ public class Distributor extends Person {
         this.imagePath = imagePath;
     }
 
-    public Distributor(String imagePath, int id, String code, String firstName, String lastName, String address, String phoneNumber, String email, String birthDate) {
+    public Distributor(int id, String imagePath, String code, String firstName, String lastName, String address, String phoneNumber, String email, String birthDate) {
         super(id, code, firstName, lastName, address, phoneNumber, email, birthDate);
         this.imagePath = imagePath;
     }

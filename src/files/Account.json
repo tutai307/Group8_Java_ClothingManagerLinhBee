@@ -1,1 +1,1 @@
-[{"password":"123","role":"Tài khoản Admin","id":1,"username":"admin"},{"password":"nv01","role":"Tài khoản Nhân viên thủ kho","id":2,"username":"nv01"},{"password":"nv02","role":"Tài khoản Nhân viên bán hàng","id":3,"username":"nv02"},{"password":"nv03","role":"Tài khoản nhân viên bán hàng","id":4,"username":"nv03"}]
+[{"password":"123","role":"Tài khoản Admin","id":1,"username":"admin"},{"password":"NV01","role":"Tài khoản nhân viên bán hàng","id":2,"username":"NV01"}]
