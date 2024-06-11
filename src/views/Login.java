@@ -177,54 +177,56 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_passwordActionPerformed
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
-//        try {
-//            String username = this.username.getText().trim();
-//            if (username.equals("")) {
-//                MessageDialog.showInfoDialog(this, "Tên người dùng không được bỏ trống", "Thông báo");
-//                return;
-//            }
-//            String password = this.password.getText().trim();
-//            if (password.equals("")) {
-//                MessageDialog.showInfoDialog(this, "Mật khẩu không được bỏ trống", "Thông báo");
-//                return;
-//            }
-//            Account acc = new Account(username, password);
-//            if (AccountService.isExisted(acc)) {
-//                AccountService.currentLoginUser = AccountService.getAccountByUsername(acc.getUsername());
-//                dispose();
-//                Account loggedInAccount = AccountService.getAccountByUsername(acc.getUsername());
-//                if (loggedInAccount.getRole().equals("Tài khoản nhân viên")) {
-//                    Staff loggedInStaff = StaffService.getStaffByAccountId(loggedInAccount.getId());
-//                    if (loggedInStaff == null) {
-//                        MessageDialog.showInfoDialog(jPanel1, "Tài khoản của bạn không tồn tại, vui lòng liên hệ lại với đội kỹ thuật của nhà trường", "Thông báo");
-//                        return;
-//                    }
-//                    StaffHome studentAndTeacherHome = new StaffHome(loggedInStaff);
-//                    studentAndTeacherHome.setVisible(true);
-//                    studentAndTeacherHome.setLocationRelativeTo(null);
-//                } else 
-//                    if(loggedInAccount.getRole().equalsIgnoreCase("Tài khoản admin")){
-//                    Staff loggedInputStaff = StaffService.getStaffByAccountId(loggedInAccount.getId());
-//                    if(loggedInputStaff == null)
-//                    {
-//                        MessageDialog.showInfoDialog(jPanel1, "Tài khoản của bạn không tồn tại, vui lòng liên hệ lại với đội kỹ thuật", "Thông báo");
-//                        return;
-//                    }
-//                    Home homeScreen = new Home();
-//                    homeScreen.setVisible(true);
-//                }
-//                else {
-                    dispose();
+        try {
+            String username = this.username.getText().trim();
+            if (username.equals("")) {
+                MessageDialog.showInfoDialog(this, "Tên người dùng không được bỏ trống", "Thông báo");
+                return;
+            }
+            String password = this.password.getText().trim();
+            if (password.equals("")) {
+                MessageDialog.showInfoDialog(this, "Mật khẩu không được bỏ trống", "Thông báo");
+                return;
+            }
+            Account acc = new Account(username, password);
+            if (AccountService.isExisted(acc)) {
+                AccountService.currentLoginUser = AccountService.getAccountByUsername(acc.getUsername());
+                dispose();
+                Account loggedInAccount = AccountService.getAccountByUsername(acc.getUsername()); 
+                if(loggedInAccount.getRole().equalsIgnoreCase("Tài khoản Admin")){
+                    Staff loggedInputStaff = StaffService.getStaffByAccountId(loggedInAccount.getId());
+                    if(loggedInputStaff == null)
+                    {
+                        MessageDialog.showInfoDialog(jPanel1, "Tài khoản của bạn không tồn tại, vui lòng liên hệ lại với đội kỹ thuật", "Thông báo");
+                        return;
+                    }
                     Home homeScreen = new Home();
                     homeScreen.setVisible(true);
-//                }
-//            } else {
-//                MessageDialog.showInfoDialog(this, "Tên tài khoản hoặc mật khẩu không chính xác", "Thông báo");
-//            }
-//        } catch (Exception ex) {
-//            MessageDialog.showErrorDialog(this, "Tạo tài khoản mới có lỗi, chi tiết: " + ex.getMessage(), "Có lỗi xảy ra");
-//            ex.printStackTrace();
-//        }
+                }else if(loggedInAccount.getRole().equalsIgnoreCase("Tài khoản nhân viên thủ kho")){
+                    Staff loggedInputStaff = StaffService.getStaffByAccountId(loggedInAccount.getId());
+                    if(loggedInputStaff == null)
+                    {
+                        MessageDialog.showInfoDialog(jPanel1, "Tài khoản của bạn không tồn tại, vui lòng liên hệ lại với đội kỹ thuật", "Thông báo");
+                        return;
+                    }
+                    StaffHome staffHome = new StaffHome();
+                    staffHome.setVisible(true);
+                }else if(loggedInAccount.getRole().equalsIgnoreCase("Tài khoản nhân viên bán hàng")){
+                    Staff loggedInputStaff = StaffService.getStaffByAccountId(loggedInAccount.getId());
+                    if(loggedInputStaff == null)
+                    {
+                        MessageDialog.showInfoDialog(jPanel1, "Tài khoản của bạn không tồn tại, vui lòng liên hệ lại với đội kỹ thuật", "Thông báo");
+                        return;
+                    }
+//                  Hiển thị màn hình nhân viên bán hàng
+                }
+            } else {
+                MessageDialog.showInfoDialog(this, "Tên tài khoản hoặc mật khẩu không chính xác", "Thông báo");
+            }
+        } catch (Exception ex) {
+            MessageDialog.showErrorDialog(this, "Tạo tài khoản mới có lỗi, chi tiết: " + ex.getMessage(), "Có lỗi xảy ra");
+            ex.printStackTrace();
+        }
     }//GEN-LAST:event_loginButtonActionPerformed
 
     /**
