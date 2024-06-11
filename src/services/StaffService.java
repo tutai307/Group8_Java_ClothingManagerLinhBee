@@ -83,7 +83,7 @@ public class StaffService {
             List<Staff> data = StaffDAO.readFromFile();
             Staff tea = new Staff(id, imagePath, code, FirstName(name), LastName(name), address, phoneNumber, email, birthDate, accountId, position);
             data.add(tea);
-            Account acc = new Account(accountId, code, code, "Tài khoản nhân viên bán hàng");
+            Account acc = new Account(accountId, code, code, "Tài khoản " + position);
             List<Account> dataAccount = AccountDAO.readFromFile();
             dataAccount.add(acc);
             AccountDAO.writeToFile(dataAccount);
@@ -97,6 +97,7 @@ public class StaffService {
 
     public static void updateStaff(Staff staff) throws Exception {
         List<Staff> data = StaffDAO.readFromFile();
+        List<Account> dataAccount = AccountDAO.readFromFile();
 
         for (Staff tea : data) {
             if (tea.getId() == staff.getId()) {
@@ -110,12 +111,20 @@ public class StaffService {
                 tea.setImagePath(staff.getImagePath());
                 tea.setAccountId(staff.getAccountId());
                 tea.setPosition(staff.getPosition());
+
+                // Update the corresponding account
+                for (Account acc : dataAccount) {
+                    if (acc.getId() == tea.getAccountId()) {
+                        acc.setRole("Tài khoản " + staff.getPosition());
+                        break;
+                    }
+                }
                 break;
             }
         }
-
-        StaffDAO.writeToFile(data);
     }
+ 
+
 
     public static void deleteStaff(int staffId) throws Exception {
     List<Staff> data = StaffDAO.readFromFile();
