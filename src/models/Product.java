@@ -12,24 +12,31 @@ public class Product {
     private int id;
     private String code;
     private String name;
-    private double price;
+    private double priceSell;
     private String description;
-    private Size size;
+    private String imagePath;
     private int quantity;
-    private Category category;
+    private int categoryId;
 
-    public Product() {
-    }
-
-    public Product(int id, String code, String name, double price, String description, Size size, int quantity, Category category) {
+    public Product(int id, String imagePath, String code,  String name, String description, double priceSell, int quantity, int categoryId) {
         this.id = id;
         this.code = code;
         this.name = name;
-        this.price = price;
+        this.priceSell = priceSell;
         this.description = description;
-        this.size = size;
+        this.imagePath = imagePath;
         this.quantity = quantity;
-        this.category = category;
+        this.categoryId = categoryId;
+    }
+
+    public Product(String imagePath, String code, String name, double priceSell, String description,  int quantity, int categoryId) {
+        this.code = code;
+        this.name = name;
+        this.priceSell = priceSell;
+        this.description = description;
+        this.imagePath = imagePath;
+        this.quantity = quantity;
+        this.categoryId = categoryId;
     }
 
     public int getId() {
@@ -56,12 +63,12 @@ public class Product {
         this.name = name;
     }
 
-    public double getPrice() {
-        return price;
+    public double getPriceSell() {
+        return priceSell;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
+    public void setPriceSell(double priceSell) {
+        this.priceSell = priceSell;
     }
 
     public String getDescription() {
@@ -72,12 +79,12 @@ public class Product {
         this.description = description;
     }
 
-    public Size getSize() {
-        return size;
+    public String getImagePath() {
+        return imagePath;
     }
 
-    public void setSize(Size size) {
-        this.size = size;
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
     }
 
     public int getQuantity() {
@@ -88,14 +95,35 @@ public class Product {
         this.quantity = quantity;
     }
 
-    public Category getCategory() {
-        return category;
+    public int getCategoryId() {
+        return categoryId;
     }
 
-    public void setCategory(Category category) {
-        this.category = category;
+    public void setCategoryId(int categoryId) {
+        this.categoryId = categoryId;
     }
 
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 47 * hash + this.id;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Product other = (Product) obj;
+        return true;
+    }
 
 }
 

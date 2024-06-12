@@ -56,4 +56,9 @@ public class Category {
     public void setDescription(String description) {
         this.description = description;
     }
+    
+    @Override
+    public String toString() {
+        return this.name; // Hiển thị tên danh mục trong combobox
+    }
 }

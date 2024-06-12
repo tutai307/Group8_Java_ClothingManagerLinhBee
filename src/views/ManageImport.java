@@ -76,7 +76,6 @@ public class ManageImport extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         codeInput = new javax.swing.JTextField();
         nameInput = new javax.swing.JTextField();
-        descriptionInput = new javax.swing.JTextField();
         startDateInput = new javax.swing.JTextField();
         cboDis = new javax.swing.JComboBox<>();
         nameProductInput = new javax.swing.JTextField();
@@ -86,6 +85,8 @@ public class ManageImport extends javax.swing.JFrame {
         codeProductInput = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         quantityInput = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        descriptionInput = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Quản lý phiếu nhập hàng");
@@ -174,6 +175,12 @@ public class ManageImport extends javax.swing.JFrame {
             }
         });
 
+        cboStaff.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboStaffActionPerformed(evt);
+            }
+        });
+
         jLabel17.setText("Nhân viên thủ kho:");
 
         jLabel2.setText("Số lượng:");
@@ -183,6 +190,10 @@ public class ManageImport extends javax.swing.JFrame {
                 quantityInputActionPerformed(evt);
             }
         });
+
+        descriptionInput.setColumns(20);
+        descriptionInput.setRows(5);
+        jScrollPane2.setViewportView(descriptionInput);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -219,14 +230,14 @@ public class ManageImport extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(codeInput)
                                     .addComponent(nameInput)
-                                    .addComponent(descriptionInput)
                                     .addComponent(startDateInput)
-                                    .addComponent(cboDis, 0, 167, Short.MAX_VALUE)
+                                    .addComponent(cboDis, 0, 304, Short.MAX_VALUE)
                                     .addComponent(nameProductInput)
                                     .addComponent(cboStaff, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(priceInput)
                                     .addComponent(codeProductInput, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(quantityInput)))))
+                                    .addComponent(quantityInput)
+                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)))))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btn_back)
                         .addGap(0, 0, Short.MAX_VALUE)))
@@ -249,10 +260,10 @@ public class ManageImport extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(nameInput, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(descriptionInput, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -530,6 +541,10 @@ public class ManageImport extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_nameProductInputActionPerformed
 
+    private void cboStaffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboStaffActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cboStaffActionPerformed
+
     private void clearAllFields() {
         codeInput.setText("");
         nameInput.setText("");
@@ -665,7 +680,7 @@ public class ManageImport extends javax.swing.JFrame {
     private javax.swing.JComboBox<Object> cboStaff;
     private javax.swing.JTextField codeInput;
     private javax.swing.JTextField codeProductInput;
-    private javax.swing.JTextField descriptionInput;
+    private javax.swing.JTextArea descriptionInput;
     private javax.swing.JTable importTable;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -679,6 +694,7 @@ public class ManageImport extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField nameInput;
     private javax.swing.JTextField nameProductInput;
     private javax.swing.JTextField priceInput;

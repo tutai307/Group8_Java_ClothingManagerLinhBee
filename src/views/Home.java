@@ -35,7 +35,7 @@ public class Home extends javax.swing.JFrame {
         manageCustomerButton = new javax.swing.JButton();
         manageStaffButton = new javax.swing.JButton();
         distributorButton = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        productBtn = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         manageAccount = new javax.swing.JButton();
         logoutButton = new javax.swing.JButton();
@@ -94,11 +94,11 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jButton4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton4.setText("Sản phẩm");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        productBtn.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        productBtn.setText("Sản phẩm");
+        productBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                productBtnActionPerformed(evt);
             }
         });
 
@@ -151,7 +151,7 @@ public class Home extends javax.swing.JFrame {
                                 .addContainerGap()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(manageStaffButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(productBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(manageCustomerButton, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addContainerGap()
@@ -172,7 +172,7 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(productBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(manageCustomerButton, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -212,9 +212,13 @@ public class Home extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void productBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_productBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+        dispose();
+        ManageProduct manageStudentScreen = new ManageProduct();
+        manageStudentScreen.setLocationRelativeTo(null);
+        manageStudentScreen.setVisible(true);
+    }//GEN-LAST:event_productBtnActionPerformed
 
     private void manageCustomerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageCustomerButtonActionPerformed
         // TODO add your handling code here:
@@ -309,7 +313,6 @@ public class Home extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton distributorButton;
     private javax.swing.JButton importBtn;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -319,5 +322,6 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JButton manageAccount;
     private javax.swing.JButton manageCustomerButton;
     private javax.swing.JButton manageStaffButton;
+    private javax.swing.JButton productBtn;
     // End of variables declaration//GEN-END:variables
 }

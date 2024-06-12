@@ -1,0 +1,38 @@
+[
+    {
+        "code": "DM01",
+        "name": "Thời trang công sở",
+        "description": "Thời trang công sở bao gồm các trang phục phù hợp trong các môi trường làm việc",
+        "id": 1
+    },
+    {
+        "code": "DM02",
+        "name": "Thời trang hiện đại",
+        "description": "Thời trang hiện đại bao gồm các xu hướng thời trang mới nhất, trẻ trung và sành điệu",
+        "id": 2
+    },
+    {
+        "code": "DM03",
+        "name": "Thời trang mùa hè",
+        "description": "Thời trang mùa hè bao gồm các trang phục mát mẻ, thoải mái phù hợp với thời tiết nóng",
+        "id": 3
+    },
+    {
+        "code": "DM04",
+        "name": "Thời trang thể thao",
+        "description": "Thời trang thể thao bao gồm các trang phục phù hợp cho các hoạt động thể thao và vận động",
+        "id": 4
+    },
+    {
+        "code": "DM05",
+        "name": "Thời trang mùa đông",
+        "description": "Thời trang mùa đông bao gồm các trang phục ấm áp, bảo vệ cơ thể khỏi thời tiết lạnh",
+        "id": 5
+    },
+    {
+        "code": "DM06",
+        "name": "Thời trang dạo phố",
+        "description": "Thời trang dạo phố bao gồm các trang phục thoải mái, phù hợp cho các hoạt động ngoài trời và đi dạo phố",
+        "id": 6
+    }
+]
