@@ -237,7 +237,10 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_manageStaffButtonActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
+        dispose();
+        ManageOrder manageOrderScreen = new ManageOrder();
+        manageOrderScreen.setLocationRelativeTo(null);
+        manageOrderScreen.setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void distributorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_distributorButtonActionPerformed

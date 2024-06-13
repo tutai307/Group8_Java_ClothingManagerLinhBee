@@ -128,5 +128,13 @@ public class ProductService {
         }
         return null;
     }
-
+    public static int getProductPriceByCode(String code) throws Exception {
+        List<Product> products = ProductDAO.readFromFile();
+        for (Product product : products) {
+            if (product.getCode() == code) {
+                return (int)product.getPriceSell();
+            }
+        }
+        return 0;
+    }
 }

@@ -163,6 +163,12 @@ public class ManageImport extends javax.swing.JFrame {
 
         jLabel16.setText("Giá nhập:");
 
+        codeInput.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                codeInputActionPerformed(evt);
+            }
+        });
+
         cboDis.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cboDisActionPerformed(evt);
@@ -544,6 +550,10 @@ public class ManageImport extends javax.swing.JFrame {
     private void cboStaffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboStaffActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cboStaffActionPerformed
+
+    private void codeInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codeInputActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_codeInputActionPerformed
 
     private void clearAllFields() {
         codeInput.setText("");
