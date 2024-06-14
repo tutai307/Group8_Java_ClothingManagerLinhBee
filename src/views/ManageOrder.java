@@ -77,6 +77,8 @@ public class ManageOrder extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setPreferredSize(new java.awt.Dimension(1152, 750));
+
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setText("Quản lý đơn hàng");
 
@@ -145,11 +147,11 @@ public class ManageOrder extends javax.swing.JFrame {
 
         jLabel5.setText("Ngày đặt hàng:");
 
-        jLabel6.setText("Mã khách hàng:");
+        jLabel6.setText("Tên khách hàng:");
 
-        jLabel7.setText("Mã nhân viên:");
+        jLabel7.setText("Tên nhân viên:");
 
-        jLabel8.setText("Mã sản phẩm:");
+        jLabel8.setText("Tên sản phẩm:");
 
         jLabel10.setText("Số lượng bán:");
 
@@ -174,6 +176,11 @@ public class ManageOrder extends javax.swing.JFrame {
 
         cboCustomerCode.setMinimumSize(new java.awt.Dimension(300, 30));
         cboCustomerCode.setPreferredSize(new java.awt.Dimension(300, 30));
+        cboCustomerCode.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboCustomerCodeActionPerformed(evt);
+            }
+        });
 
         txtOrderDate.setMinimumSize(new java.awt.Dimension(300, 30));
         txtOrderDate.setPreferredSize(new java.awt.Dimension(300, 30));
@@ -206,63 +213,64 @@ public class ManageOrder extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 646, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnAddOrder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnDeleteOrder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(117, 117, 117))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 16, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 595, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel8)
-                                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel10)
-                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtOrderDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(cboProductCode, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(cboStaffCode, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(cboCustomerCode, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtOrderName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtOrderCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(120, 120, 120)
-                        .addComponent(btnChangeOrder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnAgain, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(32, 32, 32))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(btnBack)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(465, 465, 465))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(jLabel8)
+                                                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(jLabel10)
+                                                    .addComponent(jLabel5)
+                                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGap(24, 24, 24))
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(txtQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(txtOrderDate, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                .addComponent(cboProductCode, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(cboStaffCode, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(cboCustomerCode, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtOrderName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtOrderCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(75, 75, 75))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(btnAddOrder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(29, 29, 29)
+                                .addComponent(btnChangeOrder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnDeleteOrder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(29, 29, 29)
+                                .addComponent(btnAgain, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(64, 64, 64))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(btnBack)
+                        .addGap(332, 332, 332)
+                        .addComponent(jLabel1)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnBack)
-                .addGap(7, 7, 7)
-                .addComponent(jLabel1)
+                .addGap(16, 16, 16)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(btnBack))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(84, 84, 84)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtOrderCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2))
@@ -277,48 +285,47 @@ public class ManageOrder extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(55, 55, 55)
                                 .addComponent(jLabel4)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                        .addGap(27, 27, 27)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtOrderDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel5))
-                        .addGap(31, 31, 31)
+                        .addGap(27, 27, 27)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(cboCustomerCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel6))
-                        .addGap(36, 36, 36)
+                        .addGap(18, 18, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(cboStaffCode, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
-                            .addComponent(jLabel7))
-                        .addGap(34, 34, 34)
+                            .addComponent(jLabel7)
+                            .addComponent(cboStaffCode, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(cboProductCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel8))
-                        .addGap(31, 31, 31)
+                        .addGap(24, 24, 24)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel10))
-                        .addGap(53, 53, 53)
+                        .addGap(52, 52, 52)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnAddOrder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnChangeOrder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnDeleteOrder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnAddOrder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnAgain, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18))
+                            .addComponent(btnAgain, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 627, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(41, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 535, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(20, 20, 20))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1077, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 609, Short.MAX_VALUE)
         );
 
         pack();
@@ -361,12 +368,35 @@ public class ManageOrder extends javax.swing.JFrame {
             String importOrderName = this.txtOrderName.getText().trim();
             String importDes = this.areaDescription.getText().trim();
             String importDate = this.txtOrderDate.getText().trim();
-            String importCustomerCode = this.cboCustomerCode.getSelectedItem().toString();
-            String importStaffCode = this.cboStaffCode.getSelectedItem().toString();
-            String importProductCode = this.cboProductCode.getSelectedItem().toString();
+            String importNameCustomer = this.cboCustomerCode.getSelectedItem().toString();
+            String importNameStaff = this.cboStaffCode.getSelectedItem().toString();
+            String importNameProduct = this.cboProductCode.getSelectedItem().toString();
             int quantity = Integer.parseInt(this.txtQuantity.getText().trim());
             
-           
+            String importCodeCustomer = "";
+            String importCodeStaff = "";
+            String importCodeProduct = "";
+            
+            List<Product> productList = ProductDAO.readFromFile();
+            List<Staff> staffList = StaffDAO.readFromFile();
+            List<Customer> customerList = CustomerDAO.readFromFile();
+            for(Product product : productList ){
+                if(product.getName().equals(importNameProduct)){
+                    importCodeProduct = product.getCode();
+                }
+            }
+            for(Staff staff : staffList ){
+                if((staff.getLastName() + " " + staff.getFirstName()).equals(importNameStaff)){
+                    importCodeStaff = staff.getCode();
+                }
+            }
+
+            for(Customer customer : customerList ){
+                if((customer.getLastName() + " " + customer.getFirstName()).equals(importNameCustomer)){
+                    importCodeCustomer = customer.getCode();
+                }
+            }
+            
             if (importOrderCode.isEmpty()) {
                 MessageDialog.showInfoDialog(this, "Mã phiếu nhập không được để trống", "Thông báo");
                 return;
@@ -409,9 +439,9 @@ public class ManageOrder extends javax.swing.JFrame {
             }
 
             if (selectedOrdertDetail != null) {
-                selectedOrdertDetail.setCustomerCode(importCustomerCode);
-                selectedOrdertDetail.setStaffCode(importStaffCode);
-                selectedOrdertDetail.setProductCode(importProductCode);
+                selectedOrdertDetail.setCustomerCode(importCodeCustomer);
+                selectedOrdertDetail.setStaffCode(importCodeStaff);
+                selectedOrdertDetail.setProductCode(importCodeProduct);
                 selectedOrdertDetail.setQuantity(quantity);
                 
 
@@ -436,11 +466,35 @@ public class ManageOrder extends javax.swing.JFrame {
             String importName = this.txtOrderName.getText().trim();
             String importDes = this.areaDescription.getText().trim();
             String importDate = this.txtOrderDate.getText().trim();
-            String importCodeCustomer = this.cboCustomerCode.getSelectedItem().toString();
-            String importCodeStaff = this.cboStaffCode.getSelectedItem().toString();
-            String importCodeProduct = this.cboProductCode.getSelectedItem().toString();
+            String importNameCustomer = this.cboCustomerCode.getSelectedItem().toString();
+            String importNameStaff = this.cboStaffCode.getSelectedItem().toString();
+            String importNameProduct = this.cboProductCode.getSelectedItem().toString();
             int importQuality = Integer.parseInt(this.txtQuantity.getText().trim());
+            
+            String importCodeCustomer = "";
+            String importCodeStaff = "";
+            String importCodeProduct = "";
+            
+            List<Product> productList = ProductDAO.readFromFile();
+            List<Staff> staffList = StaffDAO.readFromFile();
+            List<Customer> customerList = CustomerDAO.readFromFile();
+            for(Product product : productList ){
+                if(product.getName().equals(importNameProduct)){
+                    importCodeProduct = product.getCode();
+                }
+            }
+            for(Staff staff : staffList ){
+                if((staff.getLastName() + " " + staff.getFirstName()).equals(importNameStaff)){
+                    importCodeStaff = staff.getCode();
+                }
+            }
 
+            for(Customer customer : customerList ){
+                if((customer.getLastName() + " " + customer.getFirstName()).equals(importNameCustomer)){
+                    importCodeCustomer = customer.getCode();
+                }
+            }
+            
             if (importCode.equalsIgnoreCase("")) {
                 MessageDialog.showInfoDialog(this, "Mã đơn hàng không được để trống", "Thông báo");
                 return;
@@ -457,12 +511,11 @@ public class ManageOrder extends javax.swing.JFrame {
                 MessageDialog.showInfoDialog(this, "Ngày xuất đơn hàng không được để trống", "Thông báo");
                 return;
             }
-
+            
             if (importQuality <= 0) {
                 MessageDialog.showInfoDialog(this, "Số lượng bán không hợp lệ", "Thông báo");
                 return;
             }
-
             if (OrderService.isExistedOrderCode(importCode)) {
                 MessageDialog.showInfoDialog(this, "Trùng mã phiếu nhập", "Thông báo");
             } else {
@@ -524,13 +577,34 @@ public class ManageOrder extends javax.swing.JFrame {
 
             // Lấy dữ liệu từ ImportDetail
             List<OrderDetail> orderDetailData = OrderDAO.readOrderDetailsFromFile();
+            
             for (OrderDetail detail : orderDetailData) {
                 if (detail.getOrderCode().equals(orderCode)) {
-                    cboProductCode.setSelectedItem(detail.getProductCode());
-                    cboStaffCode.setSelectedItem(detail.getStaffCode());
-                    cboProductCode.setSelectedItem(detail.getProductCode());
+//                    cboProductCode.setSelectedItem(detail.getProductCode());
+//                    cboStaffCode.setSelectedItem(detail.getStaffCode());
+//                    cboProductCode.setSelectedItem(detail.getProductCode());
                     txtQuantity.setText(String.valueOf(detail.getQuantity()));
                    
+                    List<Product> productList = ProductDAO.readFromFile();
+                    List<Staff> staffList = StaffDAO.readFromFile();
+                    List<Customer> customerList = CustomerDAO.readFromFile();
+                    for(Product product : productList ){
+                        if(product.getCode().equals(detail.getProductCode())){
+                            cboProductCode.setSelectedItem(product.getName());
+                        }
+                    }
+                    
+                    for(Staff staff : staffList ){
+                        if(staff.getCode().equals(detail.getStaffCode())){
+                            cboStaffCode.setSelectedItem(staff.getLastName() + " " + staff.getFirstName());
+                        }
+                    }
+                    
+                    for(Customer customer : customerList ){
+                        if(customer.getCode().equals(detail.getCustomerCode())){
+                            cboCustomerCode.setSelectedItem(customer.getLastName() + " " + customer.getFirstName());
+                        }
+                    }
                     break; // Chỉ lấy chi tiết phiếu nhập đầu tiên tìm thấy
                 }
             }
@@ -539,6 +613,10 @@ public class ManageOrder extends javax.swing.JFrame {
             ex.printStackTrace();
         }
     }//GEN-LAST:event_tblOrderMouseClicked
+
+    private void cboCustomerCodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboCustomerCodeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cboCustomerCodeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -644,7 +722,7 @@ public class ManageOrder extends javax.swing.JFrame {
 
             // Thêm code của nhân viên bán hàng vào combobox
             for (Customer customer : customerList) {
-                cboCustomerCode.addItem(customer.getCode());
+                cboCustomerCode.addItem(customer.getLastName() + " " + customer.getFirstName() );
             }
         } catch (Exception ex) {
             MessageDialog.showErrorDialog(this, "Đã xảy ra lỗi khi tải danh sách khách hàng từ tệp: " + ex.getMessage(), "Lỗi");
@@ -660,7 +738,7 @@ public class ManageOrder extends javax.swing.JFrame {
             // Thêm code của nhân viên bán hàng vào combobox
             for (Staff staff : staffList) {
                 if ("Nhân viên bán hàng".equals(staff.getPosition())) {
-                    cboStaffCode.addItem(staff.getCode());
+                    cboStaffCode.addItem(staff.getLastName() + " " + staff.getFirstName());
                 }
             }
         } catch (Exception ex) {
@@ -677,7 +755,7 @@ public class ManageOrder extends javax.swing.JFrame {
 
             // Thêm code của từng khách hàng vào combobox
             for (Product product : products) {
-                cboProductCode.addItem(product.getCode());
+                cboProductCode.addItem(product.getName());
             }
         } catch (Exception ex) {
             MessageDialog.showErrorDialog(this, "Đã xảy ra lỗi khi tải danh sách nhà phân phối từ tệp: " + ex.getMessage(), "Lỗi");

@@ -33,7 +33,6 @@ public class ManageProduct extends javax.swing.JFrame {
 
     private String selectedImagePath = "";
     private static final String imageFolderPath = "src/resources/";
-
     public ManageProduct() {
         initComponents();
         initializeTable();

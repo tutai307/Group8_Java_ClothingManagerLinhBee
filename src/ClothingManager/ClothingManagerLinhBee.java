@@ -17,7 +17,6 @@ public class ClothingManagerLinhBee {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        
         Login loginView = new Login();
         //loginView.setLocationRelativeTo(null);
         loginView.setVisible(true);       

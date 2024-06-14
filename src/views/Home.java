@@ -11,7 +11,7 @@ import common.MessageDialog;
  * @author Admin
  */
 public class Home extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form Home
      */
