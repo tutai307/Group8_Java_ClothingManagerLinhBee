@@ -193,32 +193,16 @@ public class Login extends javax.swing.JFrame {
                 AccountService.currentLoginUser = AccountService.getAccountByUsername(acc.getUsername());
                 dispose();
                 Account loggedInAccount = AccountService.getAccountByUsername(acc.getUsername()); 
+                
                 if(loggedInAccount.getRole().equalsIgnoreCase("Tài khoản Admin")){
-                    Staff loggedInputStaff = StaffService.getStaffByAccountId(loggedInAccount.getId());
-                    if(loggedInputStaff == null)
-                    {
-                        MessageDialog.showInfoDialog(jPanel1, "Tài khoản của bạn không tồn tại, vui lòng liên hệ lại với đội kỹ thuật", "Thông báo");
-                        return;
-                    }
                     Home homeScreen = new Home();
                     homeScreen.setVisible(true);
                 }else if(loggedInAccount.getRole().equalsIgnoreCase("Tài khoản nhân viên thủ kho")){
-                    Staff loggedInputStaff = StaffService.getStaffByAccountId(loggedInAccount.getId());
-                    if(loggedInputStaff == null)
-                    {
-                        MessageDialog.showInfoDialog(jPanel1, "Tài khoản của bạn không tồn tại, vui lòng liên hệ lại với đội kỹ thuật", "Thông báo");
-                        return;
-                    }
-                    StaffHome staffHome = new StaffHome();
-                    staffHome.setVisible(true);
+                    StockerHome stockerHome = new StockerHome();
+                    stockerHome.setVisible(true);
                 }else if(loggedInAccount.getRole().equalsIgnoreCase("Tài khoản nhân viên bán hàng")){
-                    Staff loggedInputStaff = StaffService.getStaffByAccountId(loggedInAccount.getId());
-                    if(loggedInputStaff == null)
-                    {
-                        MessageDialog.showInfoDialog(jPanel1, "Tài khoản của bạn không tồn tại, vui lòng liên hệ lại với đội kỹ thuật", "Thông báo");
-                        return;
-                    }
-//                  Hiển thị màn hình nhân viên bán hàng
+                    SellerHome sellerHome = new SellerHome();
+                    sellerHome.setVisible(true);
                 }
             } else {
                 MessageDialog.showInfoDialog(this, "Tên tài khoản hoặc mật khẩu không chính xác", "Thông báo");
