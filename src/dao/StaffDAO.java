@@ -42,26 +42,6 @@ public class StaffDAO {
                     int accountId = Integer.parseInt(staffJson.get("accountId").toString());
                     String position = (String) staffJson.get("position").toString();
                     Staff staff = new Staff(id,imagePath, code, firstname, lastname, address, phone, email, birthDate, accountId,position);
-//                    JSONArray toursArray = (JSONArray) staffJson.get("tours");
-//                    if (toursArray != null) {
-//                        List<Tour> tours = new ArrayList<>();
-//                        for (Object tourObject : toursArray) {
-//                            JSONObject tourJson = (JSONObject) tourObject;
-//                            Tour tour = new Tour();
-//                            tour.setId(Integer.parseInt(tourJson.get("id").toString()));
-//                            tour.setCode((String) tourJson.get("code"));
-//                            tour.setName((String) tourJson.get("name"));
-//                            tour.setDescription((String) tourJson.get("description"));
-//                            tour.setStartDate((String) tourJson.get("startDate"));
-//                            tour.setAvailables(Integer.parseInt(tourJson.get("availables").toString()));
-//                            tour.setCompanyId(Integer.parseInt(tourJson.get("companyId").toString()));
-//                            tour.setTeacherId(Integer.parseInt(tourJson.get("teacherId").toString()));
-//                            tour.setPresentator((String) tourJson.get("presentator"));
-//                            tours.add(tour);
-//                        }
-//                        tea.setTours(tours);
-//                    }
-
                     data.add(staff);
                 }
             } catch (Exception e) {

@@ -85,8 +85,5 @@ public class Import {
 
     public void addDetail(ImportDetail detail) {
         this.details.add(detail);
-    }
-
-    
-    
+    }  
 }

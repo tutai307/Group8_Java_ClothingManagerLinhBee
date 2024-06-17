@@ -344,7 +344,10 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
+        dispose();
+        ExpScreen expScreen = new ExpScreen();
+        expScreen.setLocationRelativeTo(null);
+        expScreen.setVisible(true);
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void exportFileImportBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exportFileImportBtnActionPerformed

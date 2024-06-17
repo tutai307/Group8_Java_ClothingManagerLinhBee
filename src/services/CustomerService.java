@@ -102,11 +102,10 @@ public class CustomerService {
                 break;
             }
         }
-//        if (delStu != null) {
-//            AccountService.deleteAccount(delStu.getAccountId());
-//            data.remove(delStu);
-//            StudentDAO.writeToFile(data);
-//        }
+        if (delStu != null) {
+            data.remove(delStu);
+            CustomerDAO.writeToFile(data);
+        }
     }
 
     public static Customer getById(int studentId) throws Exception {
