@@ -31,7 +31,7 @@ public class Home extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jButton6 = new javax.swing.JButton();
-        importBtn1 = new javax.swing.JButton();
+        exportFileImportBtn = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
@@ -47,7 +47,6 @@ public class Home extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Home");
-        setPreferredSize(new java.awt.Dimension(1000, 566));
 
         jPanel1.setBackground(new java.awt.Color(255, 204, 204));
 
@@ -63,12 +62,12 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        importBtn1.setBackground(new java.awt.Color(255, 255, 0));
-        importBtn1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        importBtn1.setText("Xuất file nhập hàng");
-        importBtn1.addActionListener(new java.awt.event.ActionListener() {
+        exportFileImportBtn.setBackground(new java.awt.Color(255, 255, 0));
+        exportFileImportBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        exportFileImportBtn.setText("Xuất file nhập hàng");
+        exportFileImportBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                importBtn1ActionPerformed(evt);
+                exportFileImportBtnActionPerformed(evt);
             }
         });
 
@@ -100,15 +99,15 @@ public class Home extends javax.swing.JFrame {
                         .addGap(187, 187, 187)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 562, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(155, 155, 155)
+                        .addGap(251, 251, 251)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(51, 51, 51)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(importBtn1, javax.swing.GroupLayout.DEFAULT_SIZE, 263, Short.MAX_VALUE)
-                            .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addGap(379, 379, 379))
+                        .addGap(129, 129, 129)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(exportFileImportBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(238, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -117,7 +116,7 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                 .addGap(79, 79, 79)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(importBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(exportFileImportBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(49, 49, 49)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -348,9 +347,13 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton7ActionPerformed
 
-    private void importBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_importBtn1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_importBtn1ActionPerformed
+    private void exportFileImportBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exportFileImportBtnActionPerformed
+        // TODO add your handling code here:'
+        dispose();
+        ExportFileImport manageTourScreen = new ExportFileImport();
+        manageTourScreen.setLocationRelativeTo(null);
+        manageTourScreen.setVisible(true);
+    }//GEN-LAST:event_exportFileImportBtnActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
@@ -393,8 +396,8 @@ public class Home extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton distributorButton;
+    private javax.swing.JButton exportFileImportBtn;
     private javax.swing.JButton importBtn;
-    private javax.swing.JButton importBtn1;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;

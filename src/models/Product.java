@@ -17,6 +17,10 @@ public class Product {
     private String imagePath;
     private int quantity;
     private int categoryId;
+    
+    public Product(){
+        
+    }
 
     public Product(int id, String imagePath, String code,  String name, String description, double priceSell, int quantity, int categoryId) {
         this.id = id;
