@@ -51,7 +51,6 @@ public class ExportFileImport extends javax.swing.JFrame {
     public ExportFileImport() {
         initComponents();
         setLocationRelativeTo(null);
-        loadComboBox();
         initializeTable();
     }
 
@@ -59,7 +58,6 @@ public class ExportFileImport extends javax.swing.JFrame {
         initComponents();
         this.teacherId = index;
         setLocationRelativeTo(null);
-        loadComboBox();
         initializeTable();
     }
 
@@ -76,31 +74,11 @@ public class ExportFileImport extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         importTable = new javax.swing.JTable();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        codeInput = new javax.swing.JTextField();
-        nameInput = new javax.swing.JTextField();
-        startDateInput = new javax.swing.JTextField();
-        cboDis = new javax.swing.JComboBox<>();
-        nameProductInput = new javax.swing.JTextField();
-        cboStaff = new javax.swing.JComboBox<>();
-        priceInput = new javax.swing.JTextField();
-        jLabel17 = new javax.swing.JLabel();
-        codeProductInput = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        quantityInput = new javax.swing.JTextField();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        descriptionInput = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
+        exportBtn = new javax.swing.JButton();
+        exportBtn1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Quản lý phiếu nhập hàng");
+        setTitle("Xuất file");
 
         btn_back.setText("Trở lại trang chủ");
         btn_back.addActionListener(new java.awt.event.ActionListener() {
@@ -110,7 +88,7 @@ public class ExportFileImport extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel1.setText("Quản lí phiếu nhập hàng");
+        jLabel1.setText("Xuất phiếu nhập hàng");
 
         importTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -130,66 +108,21 @@ public class ExportFileImport extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(importTable);
 
-        jLabel9.setText("Mã phiếu nhập:");
-
-        jLabel10.setText("Tên phiếu nhập:");
-
-        jLabel11.setText("Mô tả:");
-
-        jLabel12.setText("Ngày nhập: ");
-
-        jLabel13.setText("Đối tác:");
-
-        jLabel14.setText("Mã Sản Phẩm:");
-
-        jLabel15.setText("Tên Sản Phẩm:");
-
-        jLabel16.setText("Giá nhập:");
-
-        codeInput.addActionListener(new java.awt.event.ActionListener() {
+        exportBtn.setBackground(new java.awt.Color(255, 102, 0));
+        exportBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        exportBtn.setText("Xuất File Excel theo hàng");
+        exportBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                codeInputActionPerformed(evt);
+                exportBtnActionPerformed(evt);
             }
         });
 
-        cboDis.addActionListener(new java.awt.event.ActionListener() {
+        exportBtn1.setBackground(new java.awt.Color(255, 102, 0));
+        exportBtn1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        exportBtn1.setText("Xuất toàn bộ File Excel");
+        exportBtn1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cboDisActionPerformed(evt);
-            }
-        });
-
-        nameProductInput.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nameProductInputActionPerformed(evt);
-            }
-        });
-
-        cboStaff.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cboStaffActionPerformed(evt);
-            }
-        });
-
-        jLabel17.setText("Nhân viên thủ kho:");
-
-        jLabel2.setText("Số lượng:");
-
-        quantityInput.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                quantityInputActionPerformed(evt);
-            }
-        });
-
-        descriptionInput.setColumns(20);
-        descriptionInput.setRows(5);
-        jScrollPane2.setViewportView(descriptionInput);
-
-        jButton1.setBackground(new java.awt.Color(255, 102, 0));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton1.setText("Xuất File Excel phiếu nhập");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                exportBtn1ActionPerformed(evt);
             }
         });
 
@@ -197,51 +130,27 @@ public class ExportFileImport extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 602, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(119, 119, 119))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 656, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addComponent(jLabel2)
-                                        .addGap(0, 0, Short.MAX_VALUE))
-                                    .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(codeInput)
-                                    .addComponent(nameInput)
-                                    .addComponent(startDateInput)
-                                    .addComponent(cboDis, 0, 304, Short.MAX_VALUE)
-                                    .addComponent(nameProductInput)
-                                    .addComponent(cboStaff, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(priceInput)
-                                    .addComponent(codeProductInput, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(quantityInput)
-                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(48, 48, 48))))
-                    .addGroup(layout.createSequentialGroup()
                         .addComponent(btn_back)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 33, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 656, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(32, 32, 32))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(208, 208, 208))))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(126, 126, 126)
+                .addComponent(exportBtn)
+                .addGap(81, 81, 81)
+                .addComponent(exportBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -251,55 +160,13 @@ public class ExportFileImport extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(codeInput, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(nameInput, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(startDateInput, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cboDis, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(codeProductInput, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(12, 12, 12)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(nameProductInput, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cboStaff, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(priceInput, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(4, 4, 4)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(quantityInput, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(53, 53, 53)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(47, 47, 47))
-                    .addComponent(jScrollPane1))
-                .addContainerGap())
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(46, 46, 46)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(exportBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(exportBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(88, Short.MAX_VALUE))
         );
-
-        jLabel14.getAccessibleContext().setAccessibleName("Người đại diện doanh nghiệp:");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -323,53 +190,16 @@ public class ExportFileImport extends javax.swing.JFrame {
             Import selectedImport = ImportService.getImportByIndex(index);
             String importCode = selectedImport.getCode();
 
-            // Hiển thị dữ liệu của Import lên các ô nhập
-            nameInput.setText(selectedImport.getName());
-            codeInput.setText(selectedImport.getCode());
-            descriptionInput.setText(selectedImport.getDescription());
-            startDateInput.setText(selectedImport.getCreateDate());
 
             // Lấy dữ liệu từ ImportDetail
-            List<ImportDetail> importDetailData = ImportDAO.readImportDetailsFromFile();
-            for (ImportDetail detail : importDetailData) {
-                if (detail.getImportCode().equals(importCode)) {
-                    nameProductInput.setText(detail.getProductName());
-                    codeProductInput.setText(detail.getProductCode());
-                    priceInput.setText(String.valueOf(detail.getPriceImport()));
-                    quantityInput.setText(String.valueOf(detail.getQuantity()));
-                    cboDis.setSelectedItem(detail.getDistributorName());
-                    cboStaff.setSelectedItem(detail.getStaffName());
-                    break; // Chỉ lấy chi tiết phiếu nhập đầu tiên tìm thấy
-                }
-            }
+           
         } catch (Exception ex) {
             MessageDialog.showErrorDialog(this, "Có lỗi xảy ra khi lấy thông tin chi tiết phiếu nhập, chi tiết: " + ex.getMessage() + "\n" + ex.toString() + "\n", "Có lỗi xảy ra");
             ex.printStackTrace();
         }
     }//GEN-LAST:event_importTableMouseClicked
 
-    private void cboDisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboDisActionPerformed
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_cboDisActionPerformed
-
-    private void quantityInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quantityInputActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_quantityInputActionPerformed
-
-    private void nameProductInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameProductInputActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nameProductInputActionPerformed
-
-    private void cboStaffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboStaffActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cboStaffActionPerformed
-
-    private void codeInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codeInputActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_codeInputActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void exportBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exportBtnActionPerformed
         // TODO add your handling code here:
       try {
         JFileChooser fileChooser = new JFileChooser();
@@ -415,12 +245,173 @@ public class ExportFileImport extends javax.swing.JFrame {
                 headerStyle.setFont(headerFont);
 
                 String[] headers = {"Mã phiếu nhập", "Tên phiếu nhập", "Mô tả",
-                    "Ngày nhập", "Đối tác", "Mã sản phẩm", "Tên sản phẩm", "Nhân viên", "Giá nhập", "Số lượng"};
+                                    "Ngày nhập", "Đối tác", "Mã sản phẩm", "Tên sản phẩm", 
+                                    "Nhân viên", "Giá nhập", "Số lượng", "Tổng tiền"};
 
                 for (int i = 0; i < headers.length; i++) {
                     Cell cell = headerRow.createCell(i);
                     cell.setCellValue(headers[i]);
                     cell.setCellStyle(headerStyle);
+
+                    // Auto-size columns
+                    sheet.autoSizeColumn(i);
+                }
+
+                // Set cell style with borders
+                CellStyle cellStyle = workbook.createCellStyle();
+                cellStyle.setBorderBottom(BorderStyle.THIN);
+                cellStyle.setBottomBorderColor(IndexedColors.BLACK.getIndex());
+                cellStyle.setBorderTop(BorderStyle.THIN);
+                cellStyle.setTopBorderColor(IndexedColors.BLACK.getIndex());
+                cellStyle.setBorderLeft(BorderStyle.THIN);
+                cellStyle.setLeftBorderColor(IndexedColors.BLACK.getIndex());
+                cellStyle.setBorderRight(BorderStyle.THIN);
+                cellStyle.setRightBorderColor(IndexedColors.BLACK.getIndex());
+
+                // Get selected rows from your UI component (e.g., JTable)
+                int[] selectedRows = importTable.getSelectedRows();
+
+                List<Import> imports = ImportDAO.readFromFile();
+                List<ImportDetail> importDetails = ImportDAO.readImportDetailsFromFile();
+
+                // Create a map to store ImportDetails by importCode
+                Map<String, List<ImportDetail>> importDetailsMap = new HashMap<>();
+                for (ImportDetail detail : importDetails) {
+                    importDetailsMap.computeIfAbsent(detail.getImportCode(), k -> new ArrayList<>()).add(detail);
+                }
+
+                int rowNum = 1;
+                for (int rowIndex : selectedRows) {
+                    Import imp = imports.get(rowIndex);
+                    List<ImportDetail> details = importDetailsMap.get(imp.getCode());
+                    if (details != null) {
+                        for (ImportDetail detail : details) {
+                            Row row = sheet.createRow(rowNum++);
+                            int colNum = 0;
+
+                            // Fill each cell with data
+                            Cell cell = row.createCell(colNum++);
+                            cell.setCellValue(imp.getCode());
+                            cell.setCellStyle(cellStyle);
+
+                            cell = row.createCell(colNum++);
+                            cell.setCellValue(imp.getName());
+                            cell.setCellStyle(cellStyle);
+
+                            cell = row.createCell(colNum++);
+                            cell.setCellValue(imp.getDescription());
+                            cell.setCellStyle(cellStyle);
+
+                            cell = row.createCell(colNum++);
+                            cell.setCellValue(imp.getCreateDate());
+                            cell.setCellStyle(cellStyle);
+
+                            cell = row.createCell(colNum++);
+                            cell.setCellValue(detail.getDistributorName());
+                            cell.setCellStyle(cellStyle);
+
+                            cell = row.createCell(colNum++);
+                            cell.setCellValue(detail.getProductCode());
+                            cell.setCellStyle(cellStyle);
+
+                            cell = row.createCell(colNum++);
+                            cell.setCellValue(detail.getProductName());
+                            cell.setCellStyle(cellStyle);
+
+                            cell = row.createCell(colNum++);
+                            cell.setCellValue(detail.getStaffName());
+                            cell.setCellStyle(cellStyle);
+
+                            cell = row.createCell(colNum++);
+                            cell.setCellValue(detail.getPriceImport());
+                            cell.setCellStyle(cellStyle);
+
+                            cell = row.createCell(colNum++);
+                            cell.setCellValue(detail.getQuantity());
+                            cell.setCellStyle(cellStyle);
+
+                            // Calculate total price and add to the cell
+                            double totalPrice = detail.getPriceImport() * detail.getQuantity();
+                            cell = row.createCell(colNum++);
+                            cell.setCellValue(totalPrice);
+                            cell.setCellStyle(cellStyle);
+                        }
+                    }
+                }
+
+                try (FileOutputStream fileOut = new FileOutputStream(filePath)) {
+                    workbook.write(fileOut);
+                } catch (Exception exs) {
+                    throw exs;
+                }
+
+                workbook.close();
+
+                MessageDialog.showInfoDialog(this, "Xuất danh sách thành công! " + "\nNơi lưu: " + filePath, "Thông báo");
+            }
+        }
+    } catch (Exception ex) {
+        MessageDialog.showErrorDialog(this, "Có lỗi xảy ra khi xuất Excel. Chi tiết: " + ex.getMessage(), "Lỗi");
+        ex.printStackTrace();
+    }
+    }//GEN-LAST:event_exportBtnActionPerformed
+
+    private void exportBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exportBtn1ActionPerformed
+        // TODO add your handling code here:
+        try {
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle("Chọn vị trí để xuất file Excel");
+        fileChooser.setFileFilter(new FileNameExtensionFilter("Excel Files (*.xlsx)", "xlsx"));
+
+        int userSelection = fileChooser.showSaveDialog(this);
+
+        if (userSelection == JFileChooser.APPROVE_OPTION) {
+            String filePath = fileChooser.getSelectedFile().getAbsolutePath();
+
+            // Ensure the file has a .xlsx extension
+            if (!filePath.toLowerCase().endsWith(".xlsx")) {
+                filePath += ".xlsx";
+            }
+
+            File file = new File(filePath);
+
+            // Check if the file already exists
+            if (file.exists()) {
+                MessageDialog.showErrorDialog(this, "Tên file đã tồn tại! Vui lòng chọn tên khác.", "Lỗi");
+            } else {
+                Workbook workbook = new XSSFWorkbook();
+
+                LocalDate currentDate = LocalDate.now();
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+                String formattedDate = currentDate.format(formatter);
+                String importTitle = "CHI TIẾT PHIẾU NHẬP TRONG NGÀY " + formattedDate;
+
+                Sheet sheet = workbook.createSheet(importTitle);
+
+                // Create header row
+                Row headerRow = sheet.createRow(0);
+
+                CellStyle headerStyle = workbook.createCellStyle();
+                headerStyle.setFillForegroundColor(IndexedColors.LIGHT_BLUE.getIndex());
+                headerStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
+                headerStyle.setAlignment(HorizontalAlignment.CENTER);
+
+                org.apache.poi.ss.usermodel.Font headerFont = workbook.createFont();
+                headerFont.setColor(IndexedColors.WHITE.getIndex());
+                headerFont.setBold(true);
+                headerStyle.setFont(headerFont);
+
+                String[] headers = {"Mã phiếu nhập", "Tên phiếu nhập", "Mô tả",
+                                    "Ngày nhập", "Đối tác", "Mã sản phẩm", "Tên sản phẩm", 
+                                    "Nhân viên", "Giá nhập", "Số lượng", "Tổng tiền"};
+
+                for (int i = 0; i < headers.length; i++) {
+                    Cell cell = headerRow.createCell(i);
+                    cell.setCellValue(headers[i]);
+                    cell.setCellStyle(headerStyle);
+
+                    // Auto-size columns
+                    sheet.autoSizeColumn(i);
                 }
 
                 // Set cell style with borders
@@ -444,56 +435,60 @@ public class ExportFileImport extends javax.swing.JFrame {
                     importDetailsMap.computeIfAbsent(detail.getImportCode(), k -> new ArrayList<>()).add(detail);
                 }
 
-                if (imports != null) {
-                    int rowNum = 1;
-                    for (Import imp : imports) {
-                        List<ImportDetail> details = importDetailsMap.get(imp.getCode());
-                        if (details != null) {
-                            for (ImportDetail detail : details) {
-                                Row row = sheet.createRow(rowNum++);
-                                int colNum = 0;
+                int rowNum = 1;
+                for (Import imp : imports) {
+                    List<ImportDetail> details = importDetailsMap.get(imp.getCode());
+                    if (details != null) {
+                        for (ImportDetail detail : details) {
+                            Row row = sheet.createRow(rowNum++);
+                            int colNum = 0;
 
-                                // Fill each cell with data
-                                Cell cell = row.createCell(colNum++);
-                                cell.setCellValue(imp.getCode());
-                                cell.setCellStyle(cellStyle);
+                            // Fill each cell with data
+                            Cell cell = row.createCell(colNum++);
+                            cell.setCellValue(imp.getCode());
+                            cell.setCellStyle(cellStyle);
 
-                                cell = row.createCell(colNum++);
-                                cell.setCellValue(imp.getName());
-                                cell.setCellStyle(cellStyle);
+                            cell = row.createCell(colNum++);
+                            cell.setCellValue(imp.getName());
+                            cell.setCellStyle(cellStyle);
 
-                                cell = row.createCell(colNum++);
-                                cell.setCellValue(imp.getDescription());
-                                cell.setCellStyle(cellStyle);
+                            cell = row.createCell(colNum++);
+                            cell.setCellValue(imp.getDescription());
+                            cell.setCellStyle(cellStyle);
 
-                                cell = row.createCell(colNum++);
-                                cell.setCellValue(imp.getCreateDate());
-                                cell.setCellStyle(cellStyle);
+                            cell = row.createCell(colNum++);
+                            cell.setCellValue(imp.getCreateDate());
+                            cell.setCellStyle(cellStyle);
 
-                                cell = row.createCell(colNum++);
-                                cell.setCellValue(detail.getDistributorName());
-                                cell.setCellStyle(cellStyle);
+                            cell = row.createCell(colNum++);
+                            cell.setCellValue(detail.getDistributorName());
+                            cell.setCellStyle(cellStyle);
 
-                                cell = row.createCell(colNum++);
-                                cell.setCellValue(detail.getProductCode());
-                                cell.setCellStyle(cellStyle);
+                            cell = row.createCell(colNum++);
+                            cell.setCellValue(detail.getProductCode());
+                            cell.setCellStyle(cellStyle);
 
-                                cell = row.createCell(colNum++);
-                                cell.setCellValue(detail.getProductName());
-                                cell.setCellStyle(cellStyle);
+                            cell = row.createCell(colNum++);
+                            cell.setCellValue(detail.getProductName());
+                            cell.setCellStyle(cellStyle);
 
-                                cell = row.createCell(colNum++);
-                                cell.setCellValue(detail.getStaffName());
-                                cell.setCellStyle(cellStyle);
+                            cell = row.createCell(colNum++);
+                            cell.setCellValue(detail.getStaffName());
+                            cell.setCellStyle(cellStyle);
 
-                                cell = row.createCell(colNum++);
-                                cell.setCellValue(detail.getPriceImport());
-                                cell.setCellStyle(cellStyle);
+                            cell = row.createCell(colNum++);
+                            cell.setCellValue(detail.getPriceImport());
+                            cell.setCellStyle(cellStyle);
 
-                                cell = row.createCell(colNum++);
-                                cell.setCellValue(detail.getQuantity());
-                                cell.setCellStyle(cellStyle);
-                            }
+                            cell = row.createCell(colNum++);
+                            cell.setCellValue(detail.getQuantity());
+                            cell.setCellStyle(cellStyle);
+
+                            // Calculate total price and add to the cell
+                            double totalPrice = detail.getPriceImport() * detail.getQuantity();
+                            cell = row.createCell(colNum++);
+                            cell.setCellValue(totalPrice);
+                            cell.setCellStyle(cellStyle);
                         }
                     }
                 }
@@ -513,58 +508,12 @@ public class ExportFileImport extends javax.swing.JFrame {
         MessageDialog.showErrorDialog(this, "Có lỗi xảy ra khi xuất Excel. Chi tiết: " + ex.getMessage(), "Lỗi");
         ex.printStackTrace();
     }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_exportBtn1ActionPerformed
 
-    private void clearAllFields() {
-        codeInput.setText("");
-        nameInput.setText("");
-        descriptionInput.setText("");
-        startDateInput.setText("");
-        nameProductInput.setText("");
-        codeProductInput.setText("");
-        priceInput.setText("");
-        quantityInput.setText("");
-    }
 
     private DefaultTableModel tableModel;
 
-    private void loadComboBox() {
-        try {
-            // Đọc danh sách nhân viên từ tệp
-            List<Staff> staffList = StaffDAO.readFromFile();
-
-            // Xóa các mục cũ trong combobox
-            cboStaff.removeAllItems();
-
-            // Thêm tên của nhân viên thủ kho vào combobox
-            for (Staff staff : staffList) {
-                if ("Nhân viên thủ kho".equals(staff.getPosition())) {
-                    cboStaff.addItem(staff.getLastName() + " " + staff.getFirstName());
-                }
-            }
-        } catch (Exception ex) {
-            MessageDialog.showErrorDialog(this, "Đã xảy ra lỗi khi tải danh sách nhân viên từ tệp: " + ex.getMessage(), "Lỗi");
-            ex.printStackTrace();
-        }
-
-        try {
-            // Đọc danh sách nhà phân phối từ tệp
-            List<Distributor> distributors = DistributorDAO.readFromFile();
-
-            // Xóa các mục cũ trong combobox
-            cboDis.removeAllItems();
-
-            // Thêm tên của từng nhà phân phối vào combobox
-            for (Distributor distributor : distributors) {
-                cboDis.addItem(distributor.getFirstName());
-            }
-        } catch (Exception ex) {
-            MessageDialog.showErrorDialog(this, "Đã xảy ra lỗi khi tải danh sách nhà phân phối từ tệp: " + ex.getMessage(), "Lỗi");
-            ex.printStackTrace();
-        }
-
-    }
-
+    
     private void loadTableData() {
         try {
             List<Import> import_data = ImportService.getAllImports();
@@ -646,31 +595,11 @@ public class ExportFileImport extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_back;
-    private javax.swing.JComboBox<Object> cboDis;
-    private javax.swing.JComboBox<Object> cboStaff;
-    private javax.swing.JTextField codeInput;
-    private javax.swing.JTextField codeProductInput;
-    private javax.swing.JTextArea descriptionInput;
+    private javax.swing.JButton exportBtn;
+    private javax.swing.JButton exportBtn1;
     private javax.swing.JTable importTable;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField nameInput;
-    private javax.swing.JTextField nameProductInput;
-    private javax.swing.JTextField priceInput;
-    private javax.swing.JTextField quantityInput;
-    private javax.swing.JTextField startDateInput;
     // End of variables declaration//GEN-END:variables
 
     private double getCellValue(Import tour, int i) {
